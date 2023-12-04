@@ -17,6 +17,7 @@ else
   echo "WARNING: setup.cfg not set, will set INSTALL_SCRIPTS_ARG to: $INSTALL_SCRIPTS_ARG"
 fi
 
-# Old: This installs the binaries in the wrong location - see https://github.com/RoboStack/ros-humble/issues/41
-# $PYTHON -m pip install . --no-deps -vvv
-$PYTHON setup.py install --prefix="$PREFIX" --install-lib="$SP_DIR" $INSTALL_SCRIPTS_ARG
+# Issues: see https://github.com/RoboStack/ros-humble/issues/41
+$PYTHON -m pip install . --no-deps -vvv
+# Calling setup.py directly is deprecated
+# $PYTHON setup.py install --prefix="$PREFIX" --install-lib="$SP_DIR" $INSTALL_SCRIPTS_ARG
